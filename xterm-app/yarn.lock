@@ -232,6 +232,11 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.7.tgz#4158d3105276773d5b7695cd4834b1722e4f37a8"
   integrity sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==
 
+"@xterm/addon-attach@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@xterm/addon-attach/-/addon-attach-0.11.0.tgz#081474e38cf643725380db8530d842cd045c9eb1"
+  integrity sha512-JboCN0QAY6ZLY/SSB/Zl2cQ5zW1Eh4X3fH7BnuR1NB7xGRhzbqU2Npmpiw/3zFlxDaU88vtKzok44JKi2L2V2Q==
+
 "@xterm/addon-clipboard@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@xterm/addon-clipboard/-/addon-clipboard-0.1.0.tgz#306f5542b53deb4d8b83a141879de0ea8a851628"
@@ -243,6 +248,14 @@
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/@xterm/addon-fit/-/addon-fit-0.10.0.tgz#bebf87fadd74e3af30fdcdeef47030e2592c6f55"
   integrity sha512-UFYkDm4HUahf2lnEyHvio51TNGiLK66mqP2JoATy7hRZeXaGMRDr00JiSF7m63vR5WKATF605yEggJKsw0JpMQ==
+
+"@xterm/addon-ligatures@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@xterm/addon-ligatures/-/addon-ligatures-0.9.0.tgz#4cbe33f8546d5c273f38f8d891b80f94924212b2"
+  integrity sha512-zVV1AHV1SIm/rdzR5VDPyg+qUnR1SjH4H75iXiB7r6YDa1yEHIqc/EwnUIwz+yeeZozkh8hjbH80L7luEgtxtQ==
+  dependencies:
+    font-finder "^1.1.0"
+    font-ligatures "^1.4.1"
 
 "@xterm/addon-webgl@^0.18.0":
   version "0.18.0"
@@ -290,20 +303,56 @@ fdir@^6.4.4:
   resolved "https://registry.yarnpkg.com/fdir/-/fdir-6.4.5.tgz#328e280f3a23699362f95f2e82acf978a0c0cb49"
   integrity sha512-4BG7puHpVsIYxZUbiUE3RqGloLaSSwzYie5jvasC4LWuBWzZawynvYouhjbQKw2JuIGYdm0DzIxl8iVidKlUEw==
 
+font-finder@^1.0.3, font-finder@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/font-finder/-/font-finder-1.1.0.tgz#2bff2b2762acba720239c8bec898a96daae90858"
+  integrity sha512-wpCL2uIbi6GurJbU7ZlQ3nGd61Ho+dSU6U83/xJT5UPFfN35EeCW/rOtS+5k+IuEZu2SYmHzDIPL9eA5tSYRAw==
+  dependencies:
+    get-system-fonts "^2.0.0"
+    promise-stream-reader "^1.0.1"
+
+font-ligatures@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/font-ligatures/-/font-ligatures-1.4.1.tgz#e8c9df7cf6bee80c0cca4a9a578618c7b1f5d8de"
+  integrity sha512-7W6zlfyhvCqShZ5ReUWqmSd9vBaUudW0Hxis+tqUjtHhsPU+L3Grf8mcZAtCiXHTzorhwdRTId2WeH/88gdFkw==
+  dependencies:
+    font-finder "^1.0.3"
+    lru-cache "^6.0.0"
+    opentype.js "^0.8.0"
+
 fsevents@~2.3.2, fsevents@~2.3.3:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+
+get-system-fonts@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/get-system-fonts/-/get-system-fonts-2.0.2.tgz#7ada3cc41322daf17c204a6f07c6588341cbc9cb"
+  integrity sha512-zzlgaYnHMIEgHRrfC7x0Qp0Ylhw/sHpM6MHXeVBTYIsvGf5GpbnClB+Q6rAPdn+0gd2oZZIo6Tj3EaWrt4VhDQ==
 
 js-base64@^3.7.5:
   version "3.7.7"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-3.7.7.tgz#e51b84bf78fbf5702b9541e2cb7bfcb893b43e79"
   integrity sha512-7rCnleh0z2CkXhH67J8K1Ytz0b2Y+yxTPL+/KOJoa20hfnVQ/3/T6W/KflYI4bRHRagNeXeU2bkNGI3v1oS/lw==
 
+lru-cache@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
+  integrity sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==
+  dependencies:
+    yallist "^4.0.0"
+
 nanoid@^3.3.11:
   version "3.3.11"
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
+
+opentype.js@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/opentype.js/-/opentype.js-0.8.0.tgz#acabcfa1642fbe894a3e4d759e43ba694e02bd35"
+  integrity sha512-FQHR4oGP+a0m/f6yHoRpBOIbn/5ZWxKd4D/djHVJu8+KpBTYrJda0b7mLcgDEMWXE9xBCJm+qb0yv6FcvPjukg==
+  dependencies:
+    tiny-inflate "^1.0.2"
 
 picocolors@^1.1.1:
   version "1.1.1"
@@ -323,6 +372,11 @@ postcss@^8.5.3:
     nanoid "^3.3.11"
     picocolors "^1.1.1"
     source-map-js "^1.2.1"
+
+promise-stream-reader@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/promise-stream-reader/-/promise-stream-reader-1.0.1.tgz#4e793a79c9d49a73ccd947c6da9c127f12923649"
+  integrity sha512-Tnxit5trUjBAqqZCGWwjyxhmgMN4hGrtpW3Oc/tRI4bpm/O2+ej72BB08l6JBnGQgVDGCLvHFGjGgQS6vzhwXg==
 
 rollup@^4.34.9:
   version "4.42.0"
@@ -358,6 +412,11 @@ source-map-js@^1.2.1:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
+tiny-inflate@^1.0.2:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/tiny-inflate/-/tiny-inflate-1.0.3.tgz#122715494913a1805166aaf7c93467933eea26c4"
+  integrity sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==
+
 tinyglobby@^0.2.13:
   version "0.2.14"
   resolved "https://registry.yarnpkg.com/tinyglobby/-/tinyglobby-0.2.14.tgz#5280b0cf3f972b050e74ae88406c0a6a58f4079d"
@@ -384,3 +443,8 @@ vite@^6.3.5:
     tinyglobby "^0.2.13"
   optionalDependencies:
     fsevents "~2.3.3"
+
+yallist@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/yallist/-/yallist-4.0.0.tgz#9bb92790d9c0effec63be73519e11a35019a3a72"
+  integrity sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==
