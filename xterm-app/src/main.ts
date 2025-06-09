@@ -27,40 +27,4 @@ onresize = (_) => {
   fitAddon.fit();
 }
 
-let command = "";
-
-prompt(terminal);
-
-terminal.onData(e => {
-  switch (e) {
-    case '\u0003': // Ctrl+C
-      terminal.write('^C');
-      prompt(terminal);
-      break;
-    case '\r': // Enter
-      //runCommand(terminal, command);
-      command = '';
-      prompt(terminal);
-      break;
-    case '\u007F': // Backspace (DEL)
-      // Do not delete the prompt
-      if (command != "") {
-        terminal.write('\b \b');
-        if (command.length > 0) {
-          command = command.slice(0, command.length - 1);
-        }
-      }
-      break;
-    default: // Print all other characters for demo
-      if (e >= String.fromCharCode(0x20) && e <= String.fromCharCode(0x7E) || e >= '\u00a0') {
-        command += e;
-        terminal.write(e);
-      }
-  }
-});
-
-function prompt(term: Terminal) {
-  command = '';
-  term.write("\r\nHello from \x1B[1;3;31mxterm.js\x1B[0m $ ");
-}
-
+terminal.write("Welcome to Inventory Tracker.\r\nPlease wait while the client connects to the server\r\n");
