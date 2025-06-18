@@ -10,17 +10,22 @@ use std::{env, path::PathBuf};
 use thiserror::Error;
 use tokio::{fs, io};
 
+mod default;
 mod v1;
 
 // Update here on config version increment.
-pub type CurrentConfig = v1::Config;
+pub mod current_schema {
+    pub use super::v1::schema::*;
+}
+
+use current_schema::*;
 
 #[derive(Deserialize)]
 struct ConfigVersion {
     pub version: u32,
 }
 
-pub async fn read_config() -> Result<CurrentConfig, ConfigReadError> {
+pub async fn read_config() -> Result<Config, ConfigReadError> {
     let file_path: PathBuf = match env::var("CONF_FILE") {
         Ok(x) => PathBuf::from(x),
         Err(_) => PathBuf::from("config.toml"),
@@ -37,7 +42,7 @@ pub async fn read_config() -> Result<CurrentConfig, ConfigReadError> {
             _ => Err(ConfigReadError::Version),
         }
     } else {
-        let default_config = CurrentConfig::new("Hello World");
+        let default_config = default::CONFIG;
 
         let default_str = toml::to_string(&default_config)?;
 

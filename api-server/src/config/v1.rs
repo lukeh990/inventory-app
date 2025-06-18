@@ -5,19 +5,17 @@
  * See the file "LICENSE" in the root of this project.
  */
 
-use serde::{Deserialize, Serialize};
+pub mod schema {
+    use serde::{Deserialize, Serialize};
 
-#[derive(Deserialize, Serialize)]
-pub struct Config {
-    pub version: u32,
-    pub placeholder: String,
-}
+    #[derive(Deserialize, Serialize, Copy, Clone)]
+    pub struct UnixConfig {
+        pub unix_socket: bool,
+    }
 
-impl Config {
-    pub fn new(placeholder: &str) -> Config {
-        Config {
-            version: 1,
-            placeholder: placeholder.to_string(),
-        }
+    #[derive(Deserialize, Serialize, Copy, Clone)]
+    pub struct Config {
+        pub version: u32,
+        pub unix: UnixConfig,
     }
 }
