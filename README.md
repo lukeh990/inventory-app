@@ -71,7 +71,7 @@ Why use a web terminal and why not program the client logic into the web client?
 - [ ] API Server
   - [ ] Server Shell
     - [ ] Logging
-    - [ ] Config
+    - [x] Config
     - [ ] Multi-tasking
   - [ ] Database Connection
     - [ ] Schema

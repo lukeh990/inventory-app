@@ -10,7 +10,6 @@ use std::{env, path::PathBuf};
 use thiserror::Error;
 use tokio::{fs, io};
 
-mod default;
 mod v1;
 
 // Update here on config version increment.
@@ -42,7 +41,7 @@ pub async fn read_config() -> Result<Config, ConfigReadError> {
             _ => Err(ConfigReadError::Version),
         }
     } else {
-        let default_config = default::CONFIG;
+        let default_config = Config::default();
 
         let default_str = toml::to_string(&default_config)?;
 
