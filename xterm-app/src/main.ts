@@ -8,7 +8,7 @@ import { LigaturesAddon } from "@xterm/addon-ligatures";
 
 const terminal = new Terminal({
   theme: {
-    background: "#393939"
+    background: "#252525"
   },
   allowProposedApi: true
 });
@@ -16,7 +16,7 @@ const fitAddon = new FitAddon();
 const clipboardAddon = new ClipboardAddon();
 const ligaturesAddon = new LigaturesAddon();
 
-const element = document.getElementById("app") as HTMLElement;
+const element = document.getElementById("term") as HTMLElement;
 
 terminal.loadAddon(fitAddon);
 terminal.loadAddon(clipboardAddon);
